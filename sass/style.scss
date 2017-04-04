@@ -1,0 +1,462 @@
+/*fontawesome icons imported*/
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/*variables for colors*/
+$white : #fff;
+$light-gray : #ccc;
+$dark-gray : #333;
+$green : #3c9700;
+$bg-gray : #eee;
+$orange : #ff8800;
+
+/*breakpoint variable*/
+$screen-breakpoint : 768px;
+
+/*border radius generating mixin*/
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius+px;
+}
+
+/*box shadow generating mixin*/
+@mixin box-shadow($x , $y , $z , $color){
+	-webkit-box-shadow: $x , $y , $z , $color;
+    -moz-box-shadow: $x , $y , $z , $color;
+	box-shadow: $x , $y , $z , $color;
+}
+
+/*gradient created for given color ranges to bottom*/
+@mixin background-gradient-toBottom($startColor, $midColor, $endColor){
+	background-color: $startColor;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, $startColor, $midColor, $endColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(top, $startColor, $midColor, $endColor); /* FF3.6+ */
+	background-image: -ms-linear-gradient(top, $startColor, $midColor, $endColor); /* IE10 */
+	background-image: -o-linear-gradient(top, $startColor, $midColor, $endColor); /* Opera 11.10+ */
+	background-image: linear-gradient(to bottom,$startColor, $midColor, $endColor);
+	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$startColor', endColorstr='$endColor'); /* IE6 & IE7 */
+}
+
+/*gradient created for given color ranges to right*/
+@mixin background-gradient-toRight($startColor, $midColor, $endColor){
+	background-color: $startColor;
+	background-image: -webkit-gradient(linear, left left, left right, from($startColor), to($endColor)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(left, $startColor, $midColor, $endColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(left, $startColor, $midColor, $endColor); /* FF3.6+ */
+	background-image: -ms-linear-gradient(left, $startColor, $midColor, $endColor); /* IE10 */
+	background-image: -o-linear-gradient(left, $startColor, $midColor, $endColor); /* Opera 11.10+ */
+	background-image: linear-gradient(to right, $startColor, $midColor, $endColor);
+	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='$startColor', endColorstr='$endColor'); /* IE6 & IE7 */
+}
+
+/*small text pixel size*/
+@mixin small-text{
+	font-size: 13px !important;
+}
+
+/*bold font weight fixed*/
+@mixin bold{
+	font-weight: 700;
+}
+
+/*every element considered border box*/
+*{
+	box-sizing: border-box;
+}
+
+/*text color and font specifications*/
+body{
+	color: $dark-gray;
+	font: 16px/26px Roboto,Arial,Georgia,sans-serif;
+}
+
+/*padding and margin reset*/
+ul{
+	padding: 0;
+	margin: 0;
+	li{
+		font-size: 13px;
+	}
+}
+
+/*blank space inside sections*/
+.blank{
+	height: 10px;
+	@media only screen and (min-width: $screen-breakpoint){
+		height: 100px;
+	}
+}
+	
+/*raw button style*/
+.button{
+	border: none;
+    @include border-radius(30);
+    @include box-shadow(3px , 2px, 3px, #666);
+	color: #fff;
+	font-size: 15px;
+	padding: 10px 32px;
+	cursor: pointer;
+	margin: 10px 0px;
+}
+
+/*gray gradient button*/
+.gray-button{
+	@include background-gradient-toBottom(#e6e6e6,#ccc, #aaa);
+}
+
+/*green gradient button and hover effect*/
+.green-button{
+	@include background-gradient-toBottom(#66b100,#380, #56a100);
+  	&:hover{
+		@include background-gradient-toBottom(#4eb110, #128810, #10a11e);
+  	}
+}
+
+/*orange gradient button and hover effect*/
+.orange-button{
+	@include background-gradient-toBottom(#f80,#d70, #fd8600);
+  	&:hover{
+		@include background-gradient-toBottom(#c06e10, #d70, #bf6908);
+  	}
+}
+
+/*main container of sections and contents*/
+.main-container{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+/*link with green effect*/
+.green-link-text{
+	font-size: 12px;
+	color: $green;
+}
+
+/*fix div positions*/
+.clearfix{
+	clear: both;
+}
+
+/* fontawesome font effect*/
+[class*="fontawesome-"]:before {
+	padding-right: 5px;
+  	font-family: 'fontawesome', sans-serif;
+}
+
+/*small text and its bold version*/
+.small-text{
+	@include small-text;
+	font-weight: normal;
+	&-bold{
+		@include small-text;
+		@include bold;
+	}
+}
+
+/*additional info element styles*/
+.additional-info{
+	font-size: 11px;
+}
+
+/*copyright info element styles*/
+.copyright-info{
+	padding: 15px 0px;
+	font-size: 12px;
+}
+
+@mixin list-breaks{
+	margin-right: 12px;
+	margin-left: 17px;
+	content: '|';
+}
+@keyframes showNav {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+/*Header*/
+.header{
+	@include background-gradient-toBottom(#66b100, #338800, #56a100);	//gradient applied
+	text-align: left;
+	color: $white;
+  	
+  	/*navigation bar styles*/
+	&-nav{
+		overflow: visible;
+		font-weight: 600;
+		/*style exclusively for mobile devices, responsive effect applied on expansion*/
+		&.responsive{
+			position: relative;
+			.icon{
+				position: relative;
+				right: 0;
+				top: 0;
+			}
+			ul{
+				text-align: center;
+			}
+			@media only screen and (min-width: $screen-breakpoint){
+				display: inline-flex;
+			}
+		}
+
+		/*list toggle button*/
+		a.icon {
+			text-shadow: 4px 2px 6px #666;
+	  		margin-left: 10px;
+	  		color: $white;
+	  		font-size: 20px;
+	    	display: block;
+	    	text-decoration: none;
+			@media only screen and (min-width: $screen-breakpoint){
+				display: none;
+			}
+	  	}
+
+		/*list hidden at first on small screens*/
+		&-list{
+			list-style: none;
+		}
+
+		/*list item effects*/
+		&-item{
+			display: none;
+			animation: showNav 500ms ease-out both;
+			&.responsive{
+				float: none;
+				display: block;
+				padding: 5px 0;
+				animation: showNav 500ms ease-in both;
+				a{
+					display: block;
+					&:hover{
+						@include background-gradient-toBottom( #88d81c, #50882f, #4b820c);
+					}
+				}
+				&:not(:last-child){
+					border-bottom: 1px solid $light-gray;
+				}
+				&:first-child{
+					border-top: 1px solid $light-gray;
+				}
+				&:after{
+					margin: 0;
+					content: '';
+				}
+				@media only screen and (min-width: $screen-breakpoint){
+					display: initial;
+					padding: 0;
+					&:not(:last-child), &:first-child{
+						border: 0;
+					}
+					a{
+						display: initial;
+					}
+					&:not(:last-child):after{
+						@include list-breaks();
+					}
+				}
+			}
+
+			/*big screens effect for navigation items*/
+			@media only screen and (min-width: $screen-breakpoint){
+				&:not(:first-child) {
+					display: inline-block;
+				}
+				font-size: 16px;
+				margin: 5px 0;
+				display: inline-block;
+			}
+		}
+		@media only screen and (min-width: $screen-breakpoint){
+			display: inline-flex;
+			padding: 6px 0;
+			overflow: hidden;
+			&-item:not(:last-child):after{
+				@include list-breaks();
+			}
+		}
+		&-link{
+			text-decoration: none;
+			color: $white;
+			cursor: pointer;
+		}
+	}
+	@media only screen and (min-width: $screen-breakpoint){
+		text-align: center;
+	}
+}
+
+/*wrapper*/
+.wrapper{
+	margin: 10px 22px;
+}
+
+/*breadcrumb*/
+.breadcrumb{
+	text-align: center;
+	padding: 10px 0px 15px 15px;
+	.seperator{
+		padding: 0px 10px;
+		font-size: 10px;
+	}
+	.direct{
+		padding-right: 10px;
+	}
+	@media only screen and (min-width: $screen-breakpoint){
+		text-align: initial;
+	}
+}
+/*breadcrumb*/
+
+/*section columns styles*/
+@mixin side-columns{
+	float: left;
+	width: 100%;
+	overflow: visible;
+	@media only screen and (min-width: $screen-breakpoint){
+		overflow: hidden;
+		width: 50%;
+	}
+}
+
+/*left side column*/
+.left-column{
+	@include side-columns;
+	.section-column{
+		margin-right: 0px;
+		@media only screen and (min-width: $screen-breakpoint){
+			margin-right: 30px;
+		}
+	}
+}
+
+/*right side column*/
+.right-column{
+	@include side-columns;
+	.section-column{
+		background-color: $bg-gray;
+		margin-left: 0px;
+		@media only screen and (min-width: $screen-breakpoint){
+			margin-left: 30px;
+		}
+	}
+}
+
+/*columns for seperate components*/
+.section-column{
+	border-top: 1px solid $light-gray;
+	width: 100%;
+	margin-top: 15px;
+	padding-top: 20px;
+	@media only screen and (min-width: $screen-breakpoint){
+		float: left;
+	}
+}
+
+/*content wrapper for section columns*/
+.content-wrapper{
+	text-align: center;
+	padding-left: 15px;
+	h2{
+		font-size: 20px;
+	}
+	h3{
+		font-weight: 500;
+		font-size: 18px;
+	}
+	p{
+		margin: 10px 0;
+	}
+	@media only screen and (min-width: $screen-breakpoint){
+		text-align : initial;
+	}
+}
+
+/*signin form style*/
+.signin-form{
+	display: table;
+	padding-left: 15px;
+	margin: 0 auto;
+	padding: 20px 0;
+	input{
+		margin-bottom: 10px;
+		border: 1px solid $light-gray;
+		@include border-radius(7);
+		padding-left: 5px;
+	}
+	label, input{
+		display: table-row;
+	}
+	&-label{
+		font-size: 12px;
+	}
+	@media only screen and (min-width: $screen-breakpoint){
+		margin: 0;
+		padding: 5px 0px 10px 15px;
+	}
+}
+
+/*load json text style*/
+.load-json-link{
+	@media only screen and (min-width: $screen-breakpoint){
+		float: right;
+	}
+}
+
+/*list style with bullets fontawesome*/
+.custom-style-list{
+	list-style: none;
+	/*list-style-position: inside;*/
+	/*list-style-image: url(../images/bullet.gif);*/
+	margin-bottom: 20px;
+	li:before{
+		color: $green;
+	}
+}
+
+/*bullet style*/	
+.list-bullets:before{
+	color: $green;
+}
+/*wrapper*/
+
+/*footer*/
+.footer{
+	display: inline-block;
+	width: 100%;
+	@include background-gradient-toRight(#66b100, #338800, #56a100);
+	text-align: center;
+	color: $white;
+	&-nav{
+		display: inline-flex;
+		padding: 6px 0;
+		overflow: hidden;
+		font-weight: 600;
+		&-list{
+			list-style: none;
+		}
+		&-item{
+			font-size: 13px;
+			margin: 5px 0;
+			display: inline-block;
+		}
+		&-item:not(:last-child):after{
+			margin-right: 12px;
+			margin-left: 17px;
+			content: '|';
+		}
+		&-link{
+			text-decoration: none;
+			color: $white;
+			cursor: pointer;
+		}
+		&-toggle{
+			padding-top: 5px;
+			@media only screen and (min-width: $screen-breakpoint){
+				display: none;
+			}
+		}
+	}
+}
+/*footer*/

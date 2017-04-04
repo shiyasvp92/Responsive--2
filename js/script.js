@@ -1,0 +1,1 @@
+function toggleList(){var e=document.getElementById("navigation-menu"),a=document.getElementsByClassName("header-nav-item");if(console.log(e),"header-nav"===e.className)for(e.className+=" responsive",i=0;i<a.length;i++)console.log(a[i]),a[i].className+=" responsive";else for(e.className="header-nav",i=0;i<a.length;i++)a[i].className="header-nav-item"}
