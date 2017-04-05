@@ -46,11 +46,17 @@ gulp.task('css-change', function() {
   .pipe(connect.reload())
 });
 
+gulp.task('js-change', function() {
+  gulp.src(jsSources)
+  .pipe(connect.reload())
+});
+
 gulp.task('watch', function() {
   gulp.watch(jsSources , ['js']);
   gulp.watch(sassSources , ['sass']);
   gulp.watch(htmlSources, ['html-change']);
   gulp.watch(sassSources, ['css-change']);
+  gulp.watch(jsSources, ['js-change']);
 });
 
 gulp.task('default', ['sass' , 'js' , 'connect' , 'watch']);
