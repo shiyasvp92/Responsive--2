@@ -184,8 +184,8 @@ ul{
 	&-nav{
 		overflow: visible;
 		font-weight: 600;
-		/*style exclusively for mobile devices, responsive effect applied on expansion*/
-		&.responsive{
+		/*style exclusively for mobile devices, expanded effect applied on expansion*/
+		&.expanded{
 			position: relative;
 			.icon{
 				position: relative;
@@ -206,7 +206,6 @@ ul{
 	  		margin-left: 10px;
 	  		color: $white;
 	  		font-size: 20px;
-	    	display: block;
 	    	text-decoration: none;
 			@media only screen and (min-width: $screen-breakpoint){
 				display: none;
@@ -222,7 +221,7 @@ ul{
 		&-item{
 			display: none;
 			animation: showNav 500ms ease-out both;
-			&.responsive{
+			&.expanded{
 				float: none;
 				display: block;
 				padding: 5px 0;
@@ -314,6 +313,7 @@ ul{
 	float: left;
 	width: 100%;
 	overflow: visible;
+
 	@media only screen and (min-width: $screen-breakpoint){
 		overflow: hidden;
 		width: 50%;
@@ -357,7 +357,7 @@ ul{
 /*content wrapper for section columns*/
 .content-wrapper{
 	text-align: center;
-	padding-left: 15px;
+	padding: 0px 15px;
 	h2{
 		font-size: 20px;
 	}
@@ -450,12 +450,6 @@ ul{
 			text-decoration: none;
 			color: $white;
 			cursor: pointer;
-		}
-		&-toggle{
-			padding-top: 5px;
-			@media only screen and (min-width: $screen-breakpoint){
-				display: none;
-			}
 		}
 	}
 }

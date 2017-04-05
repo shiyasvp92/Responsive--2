@@ -20,9 +20,14 @@
     <!-- header -->
         <header class="header clearfix">
             <nav class="header-nav" id="navigation-menu">
-                <div style="display: inline-block">
-                    <a href="javascript:void(0);"class="header-nav-toggle icon" onclick="toggleList()">&#9776;</a>
+                
+                <!-- navigation items list toggle button, visible on small screens only -->
+                <div class="header-nav-toggle">
+                    <a href="javascript:void(0);" class="icon" onclick="toggleList()">&#9776;</a>
                 </div>
+                <!-- navigation items list toggle button -->
+
+                <!-- navigation items list -->
                 <ul class="header-nav-list">
                     <li class="header-nav-item"><a href="#" class="header-nav-link">Dog</a></li>
                     <li class="header-nav-item"><a href="#" class="header-nav-link">Cat</a></li>
@@ -34,6 +39,8 @@
                     <li class="header-nav-item"><a href="#" class="header-nav-link">Top Brands</a></li>
                     <li class="header-nav-item"><a href="#" class="header-nav-link fontawesome-tag">Special Offers</a></li>
                 </ul>
+                <!-- navigation items list -->
+           
             </nav>
         </header>
     <!-- header -->
@@ -42,10 +49,15 @@
         <div class="wrapper clearfix">
         <!-- main-content -->
             <main class="main-container clearfix">
+                <!-- breadcrumb -->
                 <div class="breadcrumb">
                     <span class="direct small-text-bold">You are here:</span><span class="small-text">Home</span><span class="seperator">></span><span class="small-text">Login</span>
                 </div>
+                <!-- breadcrumb -->
+
+                <!-- left side column -->
                 <section class="left-column">
+                    <!-- section column for sign in -->
                     <div class="section-column">
                         <div class="content-wrapper">
                             <h2>Returning Customer</h2>
@@ -59,19 +71,28 @@
                                 <input type="password" name="password" id="password" placeholder="Password">
 
                                 <p><a href="#forgot" class="green-link-text">Forgot your password?</a></p>
-                                
                             </form>
+
                             <button class="button gray-button" type="submit" for="signin">Sign in</button>
                             <div class="load-json-link"><a href="#load" class="green-link-text">Load data from JSON</a></div>
                         </div>
                     </div>
+                    <!-- section column for signin -->
                 </section>
+                <!-- left side column -->
+                <!-- right side column -->
                 <section class="right-column">
+
+                    <!-- section column for new customers -->
                     <div class="section-column">
                         <div class="content-wrapper new-customer-banner">
                             <h2>New Customers</h2>
                             <button class="button orange-button">Register</button>
+                            
+                            <!-- blank space inside section -->
                             <div class="blank"></div>
+                            <!-- blank space inside section -->
+
                             <h3>Register now and enjoy the advantages of a zooplus account!</h3>
                             <ul class="custom-style-list">
                                 <li class="fontawesome-ok list-bullets">collect loyalty points & get rewards</li>   
@@ -79,20 +100,30 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- section column for new customers -->
+
+                    <!-- section column for express checkout -->
                     <div class="section-column">
                         <div class="express-checkout-banner content-wrapper">
                             <h2>Express Checkout without Registration</h2>
                             <p>You can shop here without registering for a customer account</p>
+
                             <button class="button green-button">Proceed without Registering</button>
+                            
                             <p>Some automatically applied coupons may not apply with express checkout</p>
                         </div>
                     </div>
+                    <!-- section column for express checkout -->
                 </section>
+                <!-- right side column -->
             </main>
+            <!-- main content -->
             <p class="additional-info">*Required fields</p>
         
         </div>
+        <!-- wrapper -->
 
+        <!-- footer -->
         <footer class="footer clearfix">
             <nav class="footer-nav">
                 <ul class="footer-nav-list">
@@ -108,6 +139,8 @@
                 </ul>
             </nav>
         </footer>
+        <!-- footer -->
+
         <div class="copyright-info">
             &copy; 1999-2015
         </div>
