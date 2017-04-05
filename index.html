@@ -22,7 +22,7 @@
                 
                 <!-- navigation items list toggle button, visible on small screens only -->
                 <div class="header-nav-toggle">
-                    <a href="javascript:void(0);" class="icon fontawesome-reorder" onclick="toggleList()"></a>
+                    <a class="icon fontawesome-reorder" onclick="toggleList()"></a>
                 </div>
                 <!-- navigation items list toggle button -->
 
@@ -57,25 +57,21 @@
                 <!-- left side column -->
                 <section class="left-column">
                     <!-- section column for sign in -->
-                    <div class="section-column">
-                        <div class="content-wrapper">
-                            <h2>Returning Customer</h2>
-                            <p>Sign in to speed up the checkout process</p>
+                    <h2>Returning Customer</h2>
+                    <p>Sign in to speed up the checkout process</p>
 
-                            <form class="signin-form" name="signin" id="signin">
-                                <label for="email" class="signin-form-label">Email Address*</label>
-                                <input type="email" name="email" id="email" placeholder="Email Address">
+                    <form id="signin-form" name="signin-form">
+                        <label for="email" id="signin-form-label">Email Address*</label>
+                        <input type="email" name="email" id="email" placeholder="Email Address">
 
-                                <label for="password" class="signin-form-label">Password*</label>
-                                <input type="password" name="password" id="password" placeholder="Password">
+                        <label for="password" id="signin-form-label">Password*</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
 
-                                <p><a href="#forgot" class="green-link-text">Forgot your password?</a></p>
-                            </form>
+                        <p><a href="#forgot" class="green-link-text">Forgot your password?</a></p>
+                    </form>
 
-                            <button class="button gray-button" type="submit" for="signin">Sign in</button>
-                            <div class="load-json-link"><a href="#load" class="green-link-text">Load data from JSON</a></div>
-                        </div>
-                    </div>
+                    <button class="button gray-button" type="submit" for="signin-form">Sign in</button>
+                    <div class="load-json-link"><a href="#load" class="green-link-text">Load data from JSON</a></div>
                     <!-- section column for signin -->
                 </section>
                 <!-- left side column -->
@@ -83,34 +79,30 @@
                 <section class="right-column">
 
                     <!-- section column for new customers -->
-                    <div class="section-column">
-                        <div class="content-wrapper new-customer-banner">
-                            <h2>New Customers</h2>
-                            <button class="button orange-button">Register</button>
-                            
-                            <!-- blank space inside section -->
-                            <div class="blank"></div>
-                            <!-- blank space inside section -->
+                    <div class="block">
+                        <h2>New Customers</h2>
+                        <button class="button orange-button">Register</button>
+                        
+                        <!-- blank space inside section -->
+                        <div class="blank"></div>
+                        <!-- blank space inside section -->
 
-                            <h3>Register now and enjoy the advantages of a zooplus account!</h3>
-                            <ul class="custom-style-list">
-                                <li class="fontawesome-ok list-bullets">collect loyalty points & get rewards</li>   
-                                <li class="fontawesome-ok list-bullets">easy recording without information re-entry</li>
-                            </ul>
-                        </div>
+                        <h3>Register now and enjoy the advantages of a zooplus account!</h3>
+                        <ul class="custom-style-list">
+                            <li class="fontawesome-ok list-bullets">collect loyalty points & get rewards</li>   
+                            <li class="fontawesome-ok list-bullets">easy recording without information re-entry</li>
+                        </ul>
                     </div>
                     <!-- section column for new customers -->
 
                     <!-- section column for express checkout -->
-                    <div class="section-column">
-                        <div class="express-checkout-banner content-wrapper">
-                            <h2>Express Checkout without Registration</h2>
-                            <p>You can shop here without registering for a customer account</p>
+                    <div class="block">
+                        <h2>Express Checkout without Registration</h2>
+                        <p>You can shop here without registering for a customer account</p>
 
-                            <button class="button green-button">Proceed without Registering</button>
-                            
-                            <p>Some automatically applied coupons may not apply with express checkout</p>
-                        </div>
+                        <button class="button green-button">Proceed without Registering</button>
+                        
+                        <p>Some automatically applied coupons may not apply with express checkout</p>
                     </div>
                     <!-- section column for express checkout -->
                 </section>
@@ -140,9 +132,9 @@
         </footer>
         <!-- footer -->
 
-        <div class="copyright-info">
+        <p class="copyright-info">
             &copy; 1999-2015
-        </div>
+        </p>
         <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
